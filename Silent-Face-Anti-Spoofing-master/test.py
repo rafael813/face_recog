@@ -18,7 +18,7 @@ from src.utility import parse_model_name
 warnings.filterwarnings('ignore')
 
 
-SAMPLE_IMAGE_PATH = "./images/sample/"
+SAMPLE_IMAGE_PATH = " "
 
 
 # 因为安卓端APK获取的视频流宽高比为3:4,为了与之一致，所以将宽高比限制为3:4
@@ -31,7 +31,7 @@ def check_image(image):
         return True
 
 
-def test(image: object, model_dir: object, device_id: object) -> object:
+def test(image, model_dir: object, device_id: object) -> object:
     model_test = AntiSpoofPredict(device_id)
     image_cropper = CropImage()
     # image = cv2.imread(SAMPLE_IMAGE_PATH + image_name)
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model_dir",
         type=str,
-        default="./resources/anti_spoof_models",
+        default="G:\Desktop\Silent-Face-Anti-Spoofing-master\images\sample\image_T1.jpg",
         help="model_lib used to test")
     parser.add_argument(
         "--image_name",
